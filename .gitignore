@@ -1,0 +1,18 @@
+# ===== Sırlar: asla commit edilmez =====
+.env
+.env.*
+!.env.example
+application-local.yml
+
+# ===== IDE =====
+.idea/
+.vscode/
+*.iml
+
+# ===== İşletim sistemi =====
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# ===== Not: backend/target ve frontend/node_modules, dist
+# alt klasörlerdeki kendi .gitignore dosyaları tarafından yönetilir.
