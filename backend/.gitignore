@@ -1,0 +1,21 @@
+# Derleme çıktısı
+target/
+*.jar
+*.class
+
+# Sırlar asla commit edilmez
+application-local.yml
+.env
+.env.*
+
+# Loglar
+*.log
+logs/
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath

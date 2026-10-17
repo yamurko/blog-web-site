@@ -1,0 +1,53 @@
+<div class="min-h-screen flex flex-col bg-slate-50">
+  <!-- Navbar -->
+  <header class="bg-white border-b border-slate-200 sticky top-0 z-10">
+    <div class="max-w-5xl mx-auto px-4 h-16 flex items-center justify-between">
+      <a routerLink="/" class="text-xl font-bold text-slate-900 flex items-center gap-2">
+        <span class="w-8 h-8 rounded-lg bg-blue-600 text-white flex items-center justify-center font-bold">B</span>
+        <span>BlogPlatform</span>
+      </a>
+
+      <nav class="flex items-center gap-4">
+        @if (authService.isLoggedIn()) {
+          <a
+            routerLink="/posts/new"
+            class="px-3.5 py-1.5 bg-blue-600 text-white rounded-lg text-sm font-medium hover:bg-blue-700 transition"
+          >
+            + Yeni Yazı
+          </a>
+          <span class="text-sm text-slate-600">
+            Merhaba, <strong>{{ authService.currentUser()?.username }}</strong>
+          </span>
+          <button
+            (click)="logout()"
+            class="text-sm text-slate-600 hover:text-red-600 font-medium transition"
+          >
+            Çıkış
+          </button>
+        } @else {
+          <a routerLink="/login" class="text-sm font-medium text-slate-700 hover:text-blue-600 transition">
+            Giriş Yap
+          </a>
+          <a
+            routerLink="/register"
+            class="px-3.5 py-1.5 bg-slate-900 text-white rounded-lg text-sm font-medium hover:bg-slate-800 transition"
+          >
+            Kayıt Ol
+          </a>
+        }
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="flex-1">
+    <router-outlet></router-outlet>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-white border-t border-slate-200 py-6 mt-12">
+    <div class="max-w-5xl mx-auto px-4 text-center text-xs text-slate-500">
+      © 2026 Blog Platformu — Spring Boot 3 & Angular 18
+    </div>
+  </footer>
+</div>
